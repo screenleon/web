@@ -11,32 +11,46 @@
             body{
                 
                 font-family: helvetica, sans-serif;
-                font-size: 180%;
+                font-size: 130%;
                 
             }
             
             input{
                 
-                padding: 5px 5px 12px 5px;
+                padding: 10px 5px 5px 5px;
                 font-size: 25px;
                 border-radius: 5px;
                 border: 1px solid grey;
                 width: 320px;
+                
                 
             }
             
             label{
                 
                 position: relative;
-                top: 4px;
-                
+                top: 12px;
+                width: 200px;
+                float: left;
             }
             
             #wrapper{
                 
-                width: 500px;
+                width: 600px;
                 margin: 0 auto;
-                width: 150px;
+                
+            }
+            
+            .form-element{
+                
+                margin-bottom:10px;
+                
+            }
+            
+            #submitButton{
+                
+                width: 130px;
+                margin-left: 200px;
                 
             }
             
@@ -47,18 +61,54 @@
     <body>
         
         <div id="wrapper">
-        
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" value="eg.yourname@gmail.com">
             
-            <label for="phone">Telephone</label>
-            <input type="text" name="phone" id="phone" value="eg.0123456789">
+            <div class="form-element">
+                
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="eg.yourname@gmail.com">
+                
+            </div>
+            
+            <div class="form-element">
+                
+                <label for="phone">Telephone</label>
+                <input type="text" name="phone" id="phone" placeholder="eg.0123456789">
+                
+            </div>
+            
+            <div class="form-element">
+                
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                
+            </div>
+            
+            <div class="form-element">
+                
+                <label for="passwordConfirm">Confirm Password</label>
+                <input type="password" name="passwordConfirm" id="passwordConfirm">
+                
+            </div>
+            
+            <div class="form-element">
+                
+                <input type="submit" id="submitButton" value="Sign up">
+                
+            </div>
             
         </div>    
             
         <script type="text/javascript">
             
-            
+            $("#submitButton").click(function(){
+                
+                if($("password").value == $("passwordConform").value){
+                    alert("Success");
+                }else{
+                    alert("Password not match Confirm Password!")
+                }
+                
+            });
             
         </script>
         
