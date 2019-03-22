@@ -1,0 +1,72 @@
+<html>
+    
+    <head>
+        
+        <title>jQuery</title>
+        
+        <script src="jquery-3.3.1.min.js"></script>
+        
+        <style type="text/css">
+            
+            #green_circle{
+                background-color: green;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin: 10px;
+            }
+            
+            .red_square{
+                background-color: red;
+                width: 150px;
+                height: 150px;
+                margin: 10px;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="green_circle"></div>
+        <div class="red_square"></div>
+        <div class="red_square"></div>
+        
+        <p>This is some text.</p>
+        
+        <iframe src="http://www.eyny.com/" width="800px" height="800px"></iframe>
+        
+        <script type="text/javascript">
+            /*
+            if(typeof jQuery == "underdefined"){
+                
+                alert("jQuery is not installed!")
+                
+            }else {
+                
+                alert("jQuery is installed correctly!")
+                
+            }
+            */
+            $("#green_circle").hover(function(){
+                
+                alert($("p").html());
+                
+                $("p").html("This text has changed!");
+                
+            });
+            
+            $(".red_square").click(function(){
+                
+                $("iframe").attr("src", "http://screenleon.com/");
+                
+            });
+            
+            
+            
+        </script>
+    
+    </body>
+    
+</html>

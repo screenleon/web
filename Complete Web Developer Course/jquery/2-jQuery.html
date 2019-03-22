@@ -1,0 +1,58 @@
+<html>
+    
+    <head>
+        
+        <title>jQuery</title>
+        
+        <script src="jquery-3.3.1.min.js"></script>
+        
+        <style type="text/css">
+            
+            #green_circle{
+                background-color: green;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin: 10px;
+            }
+            
+            .red_square{
+                background-color: red;
+                width: 150px;
+                height: 150px;
+                margin: 10px;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="green_circle"></div>
+        
+        <div class="red_square"></div>
+        
+        <div class="red_square"></div>
+        
+        <script type="text/javascript">
+
+            $("#green_circle").click(function(){
+                
+                //$("#green_circle").css("background-color", "red");
+                
+                //alert($("body").css("width"));
+                
+            });
+            
+            $("div").click(function(){
+                
+                //alert("You click on a " + $(this).attr("id"));
+                
+            });
+            
+        </script>
+    
+    </body>
+    
+</html>
