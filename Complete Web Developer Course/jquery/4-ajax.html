@@ -9,6 +9,26 @@
         
         <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
         
+        <style type="text/css">
+            
+            #resizable{
+                
+                width: 200px;
+                height: 100px;
+                background-color: yellow;
+                
+            }
+            
+            #also{
+                
+                width: 200px;
+                height: 100px;
+                background-color: blue;
+                
+            }
+            
+        </style>
+        
     </head>
     
     <body>
@@ -18,11 +38,27 @@
             <span>I'm stuck in the box!</span>
         </div>
         
+        <div id="resizable">Resizable</div>
+        <div id="also">also resize</div>
+        
         <script type="text/javascript">
             
             $( function() {
+                
                 $( "#draggable" ).draggable({ axis: "x" });
                 $("span").draggable({ containment: "parent"});
+                $("#resizable").resizable({
+                    alsoResize: "#also",
+                    resize: function(event, ui){
+                        if ($("#resizable").width() > 300){
+                            alert("big enough!");
+                        }else if($("#resizable").width() < 30){
+                            alert("small enough!");
+                        };
+                    },
+                });
+                $("#also").resizable();
+                                           
             } );
             
         </script>
